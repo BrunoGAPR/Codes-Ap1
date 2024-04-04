@@ -1,0 +1,136 @@
+'''
+Faça um programa que exiba todos os números de 1 a 100 que são divisíveis por 7.
+'''
+x = 1
+while x <= 100:
+    if x % 7 == 0:
+        print(x)
+    x += 1
+'''
+Faça um programa que exiba todos os números de 1 a 100 que são divisíveis por 7 e por 3.
+'''
+num = 1
+while num <= 100:
+    if num % 7 == 0 and num % 3 == 0:
+        print("os valores divisiveis por 3 e 7 são:",str(num))
+    num += 1
+'''
+Faça um programa para mostrar as tabuadas de todos os números de 1 a 10.
+'''
+x = 1
+while x <= 10:
+    print(f"tabuada do {x}:")
+    y=1
+    while y <= 10:
+       resultado = x * y
+       print(f"{x} x {y} = {resultado}")
+       y += 1
+    print()
+    x += 1
+'''
+Faça um programa que receba um número inteiro maior que 1,verifique se o número é primo ou não e mostre a mensagem denúmero primo ou de número não primo. Obs: Um número éprimo quando é divisível apenas por 1 e por ele mesmo
+'''
+num = int(input("digite um numero inteiro maior que 1: "))
+primo_v = True
+if num <= 1:
+    primo_v = False
+else:
+    x = 2
+    while x * x <= num:
+        if num % x == 0:
+            primo_v = False
+        x += 1
+
+ 
+if primo_v:
+    print(f"{num} é um numero primo.")
+else:
+    print(f"{num} não é um numero primo.")
+    
+'''
+faça um programa em Python que receba dois valores inteiros,representando a base e o expoente. O programa deverá calcular eapresentar o resultado da base elevada ao expoente.
+'''
+base = int(input("digite um valor: "))
+expoente = int(input("digite outro valor : "))
+
+R = 1
+C = 0
+while C < expoente:
+    R *= base
+    C += 1
+print(R)
+
+'''
+Faça um programa em Python que leia um conjunto de valores correspondentes às notas que os alunos obtiveram em uma prova de Algoritmos
+'''
+#notas:
+num_N = 0
+notas_6_ou_M = 0
+notas_4_a_6 = 0
+notas_Me4 = 0
+soma_N = 0
+
+nota = float(input("digite uma nota(-1 para parar): "))
+while nota >=0:
+    num_N += 1
+    soma_N += nota
+    if nota >= 6.0:
+        notas_6_ou_M += 1
+    elif nota >= 4.0:
+        notas_4_a_6 += 1
+    else:
+        notas_Me4 += 1
+    nota = float(input("Digite uma nota (-1 para parar): "))
+
+if num_N > 0:
+    media_notas = soma_N / num_N
+else:
+    media_notas = 0
+print(f"Número de notas: {num_N}")
+print(f"Número de notas >= 6.0: {notas_6_ou_M}")
+print(f"Número de notas >= 4.0 e < 6.0: {notas_4_a_6}")
+print(f"Número de notas < 4.0: {notas_Me4}")
+print(f"Média das notas: {media_notas:.2f}")
+    
+'''
+Faça um programa que mostre os 8 primeiros termos dasequência de Fibonacci.
+'''
+x, y = 0, 1
+count = 0
+while count < 8:
+    print(x, end=" ")
+    x, y = y,x + y
+    count += 1
+
+'''
+Faça um programa que leia um número inteiro  0 e calcule o seufatorial
+'''
+
+num = int(input("digite um numero inteiro maior ou igual a zero: "))
+if num < 0:
+    print("esse numero não é permitido.")
+else:
+    resultado = 1
+    count = 1
+
+    while count <= num:
+        resultado *= count
+        count += 1
+    print(f"O fatorial do numero {num} é: {resultado}.")
+
+'''
+Faça um programa que receba um número N fornecido pelo usuário e mostre os N termos da série a seguir: S = 1 + 2/3  + 3/5  + 4/7 + 5/9 ... +  N/M. Depois, imprima a soma total da série.
+'''
+N= int(input("digite um numero inteiro: "))
+serie = []
+soma_T = 0
+M= 1
+Termo = 1
+while Termo <= N:
+    T = Termo / M
+    serie.append(T)
+    soma_T += T
+    M += 2
+    Termo += 1
+print (f"os {N} termos da serie são: {serie} ")
+print (f"a soma total da serie é: {soma_T: .2f}")
